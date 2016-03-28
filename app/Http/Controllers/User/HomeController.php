@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class VideoController extends Controller
+class HomeController extends Controller
 {
     //
-    public function watch($id)
+    public function index()
     {
-        return $id;
+        return "Fuck you";
     }
 }

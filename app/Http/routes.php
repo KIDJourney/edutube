@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','User\HomeController@index');
+Route::get('/watch/{id}','User\VideoController@watch');
