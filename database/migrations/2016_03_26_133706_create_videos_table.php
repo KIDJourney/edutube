@@ -17,6 +17,7 @@ class CreateVideosTable extends Migration
             $table->string('title',25)->index();
             $table->string('description',255);
             $table->string('video_url',255);
+            $table->string('cover_url',255);
 
             $table->unsignedInteger('user_id')->index();
             $table->unsignedInteger('series_id')->index();
