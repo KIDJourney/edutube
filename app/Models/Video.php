@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Videos extends Model
+class Video extends Model
 {
     //
 
@@ -12,6 +12,11 @@ class Videos extends Model
         'title', 'description', 'video_url', 'cover_url'
     ];
 
+
+    public function scopeRecent($query)
+    {
+        return $query->orderBy('created_at','desc');
+    }
 
     public function author()
     {
@@ -22,4 +27,5 @@ class Videos extends Model
     {
         return $this->belongsTo('App\Models\Series', 'series_id');
     }
+
 }
