@@ -17,7 +17,7 @@ class CreateTeachersTables extends Migration
             $table->string('name');
             $table->string('password');
             $table->string('introduction');
-            $table->unsignedInteger('submitted_video');
+            $table->unsignedInteger('submitted_video')->default(0);
             $table->timestamps();
         });
     }
