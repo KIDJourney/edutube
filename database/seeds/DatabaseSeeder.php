@@ -1,8 +1,5 @@
 <?php
 
-use App\Models\Series;
-use App\Models\Teacher;
-use App\Models\Videos;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,5 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TeacherTablerSeeder::class);
         $this->call(SeriesTableSeeder::class);
         $this->call(VideoTableSeeder::class);
+        $this->call(FavoriteTableSeeder::class);
+        $this->call(CommentTableSeeder::class);
     }
 }

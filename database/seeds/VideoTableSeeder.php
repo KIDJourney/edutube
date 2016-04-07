@@ -1,9 +1,9 @@
 <?php
 
 use App\Models\Series;
+use App\Models\Video;
 use Illuminate\Database\Seeder;
 use App\Models\Teacher;
-use App\Models\Videos;
 
 class VideoTableSeeder extends Seeder
 {
@@ -21,7 +21,7 @@ class VideoTableSeeder extends Seeder
         $series = Series::lists('id')->toarray();
 
         foreach (range(1, 50) as $index) {
-            $video = Videos::create([
+            Video::create([
                 'title' => $faker->title,
                 'description' => $faker->sentence(10),
                 'video_url' => $faker->url,
