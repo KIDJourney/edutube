@@ -15,6 +15,4 @@ class Series extends Model
     {
         return $this->hasMany('App\Models\Video','series_id');
     }
-
-
 }
