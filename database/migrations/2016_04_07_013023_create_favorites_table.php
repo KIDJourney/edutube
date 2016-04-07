@@ -14,6 +14,9 @@ class CreateFavoritesTable extends Migration
     {
         Schema::create('favorites', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('video_id');
+            $table->unique(['user_id','video_id']);
             $table->timestamps();
         });
     }

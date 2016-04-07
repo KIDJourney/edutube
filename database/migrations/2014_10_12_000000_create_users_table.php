@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('stu_id')->unique()->index();
             $table->string('password');
             $table->string('introduction')->nullable();
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

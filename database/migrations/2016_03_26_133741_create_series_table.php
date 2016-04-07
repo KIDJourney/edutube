@@ -18,6 +18,7 @@ class CreateSeriesTable extends Migration
             $table->string('description')->nullable();
             $table->unsignedInteger('count')->default(0);
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }
