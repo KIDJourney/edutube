@@ -11,5 +11,18 @@
 |
 */
 
-Route::get('/','User\HomeController@index');
-Route::get('/watch/{id}','User\VideoController@watch');
+Route::get('/', 'User\HomeController@index');
+
+
+Route::resource('/video','User\VideoController');
+Route::resource('/user','User\UserController');
+Route::resource('/teacher','User\TeacherController');
+Route::resource('/series','User\SeriesController');
+
+Route::get('/upload', 'Admin\VideoController@index');
+
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+    Route::get('/home', 'HomeController@index');
+});

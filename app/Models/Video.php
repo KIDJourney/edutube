@@ -19,7 +19,7 @@ class Video extends Model
 
     public function comments()
     {
-        return $this->hasMany('App\Models\comment','video_id');
+        return $this->hasMany('App\Models\Comment','video_id');
     }
 
     public function favoriteBy()

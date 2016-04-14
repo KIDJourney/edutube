@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,6 +13,13 @@ class HomeController extends Controller
     //
     public function index()
     {
-        return "Fuck you";
+        $videos = Video::all()->popular()->limit(0,10);
+        return view('user.index',['title'=>'主页','videos'=>$videos]);
     }
+
+
+//    public function test()
+//    {
+//        return view('user.test');
+//    }
 }
