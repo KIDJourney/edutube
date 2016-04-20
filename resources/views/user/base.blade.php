@@ -14,9 +14,9 @@
 </div>
 <nav class="nav-bar">
     <div class="nav-wrap">
-        <span style="margin-left:10px;" class="nav-heading">
+        <a href="/" style="margin-left:10px;" class="nav-heading">
             {!! HTML::image('/img/icon.jpg' , null , ['style'=>'height:78%;margin-right:5px;']) !!}微课堂
-        </span>
+        </a>
         <a href="/login" style="color:#999;" class="pull-right"><span aria-hidden="true"
                                                                       class="glyphicon glyphicon-user nav-icon"></span></a><span
                 aria-hidden="true" class="glyphicon glyphicon-search pull-right nav-icon"></span></div>
