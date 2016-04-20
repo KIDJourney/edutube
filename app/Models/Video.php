@@ -19,17 +19,23 @@ class Video extends Model
 
     public function comments()
     {
-        return $this->hasMany('App\Models\Comment','video_id');
+        return $this->hasMany('App\Models\Comment', 'video_id');
     }
 
     public function favoriteBy()
     {
-        return $this->belongsToMany('App\Models\User','favorites','video_id','user_id');
+        return $this->belongsToMany('App\Models\User', 'favorites', 'video_id', 'user_id');
     }
 
     public function series()
     {
         return $this->belongsTo('App\Models\Series', 'series_id');
+    }
+
+    public function topPlayedPerSeries($limit = 30)
+    {
+        return $this->groupBy('series_id')->orderBy('watch_count', 'desc')
+            ->paginate($limit);
     }
 
     public function scopeRecent($query, $limit = 30)
@@ -40,8 +46,7 @@ class Video extends Model
 
     public function scopePopular($query, $limit = 30)
     {
-        return $query->orderBy('watch_count','desc')
+        return $query->orderBy('watch_count', 'desc')
             ->paginate($limit);
     }
-
 }
