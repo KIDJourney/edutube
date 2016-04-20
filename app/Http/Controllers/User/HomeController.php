@@ -10,11 +10,18 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+    public function __construct(Video $video)
+    {
+//        parent::__construct();
+        $this->video = $video;
+    }
+
     //
     public function index()
     {
-        $videos = Video::all()->popular()->limit(0,10);
-        return view('user.index',['title'=>'主页','videos'=>$videos]);
+        $series_top= $this->video->topPlayedPerSeries();
+        $videos = Video::popular();
+        return view('user.index',['title'=>'主页','videos'=>$videos,'series_top'=>$series_top]);
     }
 
 
