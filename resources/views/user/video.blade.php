@@ -75,86 +75,32 @@
     <div class="media-list">
         <h3 class="ranking-title">精品推荐</h3>
         <ul class="list ranking-body">
-            <li><a href="#" class="list-item in">
-                    <div class="l">
-                        <div class="cover">
-                            <div style="opacity: 1; background-image: url(http://nos.netease.com/edu-image/468F600B04D518F9BBE434503274477B-1441950272345?imageView&amp;thumbnail=370y258&amp;quality=100);"
-                                 class="cover-img"></div>
-                        </div>
-                    </div>
-                    <div class="r">
-                        <div class="r-box">
-                            <div class="title">安卓应用程序开发</div>
-                            <div class="meta">
-                                <div class="meta-item"><span
-                                            class="icon-meta glyphicon glyphicon-play-circle"></span><span
-                                            class="text-meta">165</span></div>
-                                <div class="meta-item"><span class="icon-meta glyphicon glyphicon-star"></span><span
-                                            class="text-meta">54</span></div>
+            @foreach($sameVideos as $sameVideo)
+                @if ($sameVideo->id != $video->id)
+                    <li><a href="#" class="list-item in">
+                            <div class="l">
+                                <div class="cover">
+                                    <div style="opacity: 1; background-image: url({!! $sameVideo->cover_url !!});"
+                                         class="cover-img"></div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </a></li>
-            <li><a href="#" class="list-item in">
-                    <div class="l">
-                        <div class="cover">
-                            <div style="opacity: 1; background-image: url(http://nos.netease.com/edu-image/28DE26D7862E6E8AF26B041E57616D9E-1442816437343?imageView&amp;thumbnail=370y258&amp;quality=100);"
-                                 class="cover-img"></div>
-                        </div>
-                    </div>
-                    <div class="r">
-                        <div class="r-box">
-                            <div class="title">计算机网络原理</div>
-                            <div class="meta">
-                                <div class="meta-item"><span
-                                            class="icon-meta glyphicon glyphicon-play-circle"></span><span
-                                            class="text-meta">141</span></div>
-                                <div class="meta-item"><span class="icon-meta glyphicon glyphicon-star"></span><span
-                                            class="text-meta">64</span></div>
+                            <div class="r">
+                                <div class="r-box">
+                                    <div class="title">{!! $sameVideo->title !!}</div>
+                                    <div class="meta">
+                                        <div class="meta-item"><span
+                                                    class="icon-meta glyphicon glyphicon-play-circle"></span><span
+                                                    class="text-meta">{!! $sameVideo->watch_count !!}</span></div>
+                                        <div class="meta-item"><span
+                                                    class="icon-meta glyphicon glyphicon-star"></span><span
+                                                    class="text-meta">{!! $sameVideo->favorite_count !!}</span></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </a></li>
-            <li><a href="#" class="list-item in">
-                    <div class="l">
-                        <div class="cover">
-                            <div style="opacity: 1; background-image: url(http://img0.ph.126.net/E9koPBITe4dQGml9ouVoLA==/6630820375583994138.jpg);"
-                                 class="cover-img"></div>
-                        </div>
-                    </div>
-                    <div class="r">
-                        <div class="r-box">
-                            <div class="title">网络安全与加密</div>
-                            <div class="meta">
-                                <div class="meta-item"><span
-                                            class="icon-meta glyphicon glyphicon-play-circle"></span><span
-                                            class="text-meta">98</span></div>
-                                <div class="meta-item"><span class="icon-meta glyphicon glyphicon-star"></span><span
-                                            class="text-meta">36</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </a></li>
-            <li><a href="#" class="list-item in">
-                    <div class="l">
-                        <div class="cover">
-                            <div style="opacity: 1; background-image: url(http://imgsize.ph.126.net/?enlarge=true&amp;imgurl=http://img0.ph.126.net/v7-x_EdUZkg5F3xDeQ09Sw==/4931160117094359906.png_223x124x1x95.png);"
-                                 class="cover-img"></div>
-                        </div>
-                    </div>
-                    <div class="r">
-                        <div class="r-box">
-                            <div class="title">C语言程序设计</div>
-                            <div class="meta">
-                                <div class="meta-item"><span
-                                            class="icon-meta glyphicon glyphicon-play-circle"></span><span
-                                            class="text-meta">154</span></div>
-                                <div class="meta-item"><span class="icon-meta glyphicon glyphicon-star"></span><span
-                                            class="text-meta">85</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </a></li>
+                        </a>
+                    </li>
+                @endif
+            @endforeach
         </ul>
     </div>
 @stop

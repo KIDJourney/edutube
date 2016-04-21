@@ -38,6 +38,11 @@ class Video extends Model
             ->paginate($limit);
     }
 
+    public function sameSeriesVideo($limit=30)
+    {
+        return $this->series->videos()->popular($limit);
+    }
+
     public function scopeRecent($query, $limit = 30)
     {
         return $query->orderBy('created_at', 'desc')
