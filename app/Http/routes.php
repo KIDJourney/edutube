@@ -11,18 +11,20 @@
 |
 */
 
-Route::get('/', 'User\HomeController@index');
-
-
-Route::resource('/video','User\VideoController');
-Route::resource('/user','User\UserController');
-Route::resource('/teacher','User\TeacherController');
-Route::resource('/series','User\SeriesController');
-
-Route::get('/upload', 'Admin\VideoController@index');
-
 
 Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-    Route::get('/home', 'HomeController@index');
+//    Route::auth();
+
+    Route::get('/', 'User\HomeController@index');
+
+    Route::resource('/video','User\VideoController',
+        ['only'=>['index','show']]);
+
+    Route::resource('/user','User\UserController');
+    Route::resource('/teacher','User\TeacherController');
+    Route::resource('/series','User\SeriesController');
+
+    Route::get('/upload', 'Admin\VideoController@index');
+    Route::get('/callback','Admin\VideoController@callback');
+
 });
