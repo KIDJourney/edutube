@@ -20,7 +20,7 @@ class VideoController extends Controller
         $auth = new Auth($ak, $sk);
 
         $policy = array(
-            'callbackUrl' => 'http://127.0.0.1:8000/callback',
+            'callbackUrl' => env('CallBackUrl'),
             'callbackBody' => '{"fname":"$(fname)", "fkey":"$(key)", "desc":"$(x:desc)", "uid":' . "Test" . '}'
         );
 
