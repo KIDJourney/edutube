@@ -26,5 +26,6 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/upload', 'Admin\VideoController@index');
     Route::get('/callback','Admin\VideoController@callback');
+    Route::post('/callback','Admin\VideoController@callback');
 
 });
