@@ -10,7 +10,7 @@
                     <div data-image="http://i2.hdslb.com/320_200/video/d9/d96916cfe1401f040e168d0517751102.jpg"
                          class="cover">
                         <div class="meta">
-                            <div class="cell"><span class="ui glyphicon glyphicon-play-circle"></span><span>100</span>
+                            <div class="cell"><span class="ui glyphicon glyphicon-play-circle"></span><span>{!! $video->watch_count !!}</span>
                             </div>
                             <div class="cell"></div>
                         </div>
@@ -36,7 +36,7 @@
                         <div data-image="http://i2.hdslb.com/320_200/video/d9/d96916cfe1401f040e168d0517751102.jpg"
                              class="cover">
                             <div class="meta">
-                                <div class="cell"><span class="ui glyphicon glyphicon-play-circle"></span><span>100</span>
+                                <div class="cell"><span class="ui glyphicon glyphicon-play-circle"></span><span>{!! $video->watch_count !!}</span>
                                 </div>
                                 <div class="cell"></div>
                             </div>
