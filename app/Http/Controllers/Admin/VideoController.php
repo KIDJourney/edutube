@@ -37,6 +37,6 @@ HTML;
 
     public function callback(Request $request)
     {
-        dd($request->all());
+        return $request->all();
     }
 }
