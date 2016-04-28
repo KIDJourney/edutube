@@ -19,8 +19,8 @@ class HomeController extends Controller
     //
     public function index()
     {
-        $series_top= $this->video->topPlayedPerSeries();
-        $videos = Video::popular();
+        $series_top= $this->video->topPlayedPerSeries(6);
+        $videos = Video::popular(6);
         return view('user.index',['title'=>'主页','videos'=>$videos,'series_top'=>$series_top]);
     }
 
